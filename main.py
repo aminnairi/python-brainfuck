@@ -26,7 +26,7 @@ def main():
 
         with open(file_to_interpret, "r") as file:
             file_content    = file.read()
-            content         = brainfuck.clean(file_content)
+            content         = clean(file_content)
             content_length  = len(content)
             memory          = {0: 0}
             memory_index    = 0
@@ -113,8 +113,8 @@ def main():
         print(f"Interpretation interrupted");
         sys.exit(4)
 
-    except error:
-        print(f"Unknown error: {error}")
+    except:
+        print(f"Unknown error")
         sys.exit(5)
 
 if __name__ == "__main__":
