@@ -21,4 +21,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Test
-        run: python library/brainfuck_test.py
+        run: python main_test.py
