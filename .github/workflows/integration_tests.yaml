@@ -1,0 +1,27 @@
+name: Integration Tests
+
+on:
+  pull_request:
+    branches:
+      - latest
+      - next
+
+  push:
+    branches:
+      - latest
+      - next
+
+jobs:
+  integration_tests:
+    name: Test that the examples are working fine
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: "Example #1"
+        run: python main.py examples/01.bf | grep "a"
+
+      - name: "Example #2"
+        run: python main.py examples/02.bf | grep "}"
