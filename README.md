@@ -2,7 +2,7 @@
 
 Brainfuck interpreter written in Python.
 
-[![Integration Tests](https://github.com/aminnairi/python-brainfuck/actions/workflows/integration_tests.yaml/badge.svg)](https://github.com/aminnairi/python-brainfuck/actions/workflows/integration_tests.yaml)
+[![Unit Tests](https://github.com/aminnairi/python-brainfuck/actions/workflows/unit_tests.yaml/badge.svg)](https://github.com/aminnairi/python-brainfuck/actions/workflows/unit_tests.yaml) [![Integration Tests](https://github.com/aminnairi/python-brainfuck/actions/workflows/integration_tests.yaml/badge.svg)](https://github.com/aminnairi/python-brainfuck/actions/workflows/integration_tests.yaml)
 
 ## Requirements
 
