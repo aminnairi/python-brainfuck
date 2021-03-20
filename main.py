@@ -82,11 +82,11 @@ def main():
         sys.exit(3)
 
     except KeyboardInterrupt:
-        print(f"Interpretation interrupted");
+        print("Interpretation interrupted");
         sys.exit(4)
 
     except:
-        print(f"Unknown error")
+        print("Unknown error")
         sys.exit(5)
 
 if __name__ == "__main__":
