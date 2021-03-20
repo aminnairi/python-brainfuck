@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import sys
-import re
+import library.brainfuck as brainfuck
 
 argument_count = len(sys.argv)
 
@@ -18,9 +18,7 @@ file_to_interpret = sys.argv[1]
 try:
     with open(file_to_interpret, "r") as file:
         file_content    = file.read()
-        pattern         = r"[^+-.,<>\[\]]"
-        substitution    = ""
-        content         = re.sub(pattern, substitution, file_content)
+        content         = brainfuck.clean(file_content)
         content_length  = len(content)
         memory          = {0: 0}
         memory_index    = 0
@@ -32,12 +30,17 @@ try:
 
             if character == ".":
                 try:
-                    print(chr(memory[memory_index]), end = "")
+                    memory_value            = memory[memory_index]
+                    memory_value_character  = chr(memory_value)
+
+                    print(memory_value_character, end = "")
 
                 except:
-                    memory[memory_index] = 0
+                    memory[memory_index]    = 0
+                    memory_value            = memory[memory_index]
+                    memory_value_character  = chr(memory_value)
 
-                    print(chr(memory[memory_index]), end = "")
+                    print(memory_value_character, end = "")
 
             elif character == ",":
                 text                    = input("")
