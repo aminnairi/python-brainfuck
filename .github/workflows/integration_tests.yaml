@@ -31,3 +31,6 @@ jobs:
 
       - name: "Example #2"
         run: brainfuck examples/02.bf | grep "}"
+
+      - name: "Example #3"
+        run: brainfuck examples/03.bf | grep "Hello World!"
