@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 import sys
-import library.brainfuck as brainfuck
 import re
 
 def clean(source):
