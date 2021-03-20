@@ -2,6 +2,7 @@
 
 import sys
 import re
+import collections
 
 def clean(source):
     pattern         = r"[^+-.,<>\[\]]"
@@ -28,7 +29,7 @@ def main():
             file_content    = file.read()
             content         = clean(file_content)
             content_length  = len(content)
-            memory          = {0: 0}
+            memory          = collections.defaultdict(int)
             memory_index    = 0
             content_index   = 0
             inner_loops     = 0
@@ -37,18 +38,7 @@ def main():
                 character = content[content_index]
 
                 if character == ".":
-                    try:
-                        memory_value            = memory[memory_index]
-                        memory_value_character  = chr(memory_value)
-
-                        print(memory_value_character, end = "")
-
-                    except:
-                        memory[memory_index]    = 0
-                        memory_value            = memory[memory_index]
-                        memory_value_character  = chr(memory_value)
-
-                        print(memory_value_character, end = "")
+                    print(chr(memory[memory_index]), end = "")
 
                 elif character == ",":
                     text                    = input("")
@@ -57,36 +47,18 @@ def main():
                     memory[memory_index]    = first_character_code
 
                 elif character == "+":
-                    try:
-                        new_memory_value        = memory[memory_index] + 1
-                        memory[memory_index]    = new_memory_value
-
-                    except:
-                        memory[memory_index] = 1
+                    memory[memory_index] += 1
 
                 elif character == "-":
-                    try:
-                        new_memory_value = memory[memory_index] - 1
-
-                        if new_memory_value < 0:
-                            memory[memory_index] = 0
-
-                        else:
-                            memory[memory_index] = new_memory_value
-
-                    except:
-                        memory[memory_index] = 0
+                    if memory[memory_index] > 0:
+                        memory[memory_index] -= 1
 
                 elif character == ">":
-                    memory_index = memory_index + 1
+                    memory_index += 1
 
                 elif character == "<":
-                    new_memory_index = memory_index - 1
-
-                    if new_memory_index < 0:
-                        memory_index = 0
-                    else:
-                        memory_index = new_memory_index
+                    if memory_index > 0:
+                        memory_index -= 1
 
                 elif character == "]":
                     if memory[memory_index] > 0:
