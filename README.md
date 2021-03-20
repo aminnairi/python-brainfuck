@@ -89,3 +89,19 @@ Keyboard interruption (`CTRL-C`)
 ### 5
 
 Unknown error with its message
+
+## Issues
+
+See [issues](./issues).
+
+## Changelog
+
+See [`CHANGELOG.md`](./CHANGELOG.md).
+
+## Contributing
+
+See [`CONTRIBUTING.md`](./CONTRIBUTING.md).
+
+## License
+
+See [`LICENSE`](./LICENSE).
