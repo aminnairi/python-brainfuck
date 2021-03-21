@@ -41,24 +41,19 @@ def main():
                     print(chr(memory[memory_index]), end = "")
 
                 elif character == ",":
-                    text                    = input("")
-                    first_character         = text[0]
-                    first_character_code    = ord(first_character)
-                    memory[memory_index]    = first_character_code
+                    memory[memory_index] = ord(input("")[0])
 
                 elif character == "+":
                     memory[memory_index] += 1
 
                 elif character == "-":
-                    if memory[memory_index] > 0:
-                        memory[memory_index] -= 1
+                    memory[memory_index] = memory[memory_index] - 1 if memory[memory_index] > 0 else memory[memory_index]
 
                 elif character == ">":
                     memory_index += 1
 
                 elif character == "<":
-                    if memory_index > 0:
-                        memory_index -= 1
+                    memory_index = memory_index - 1 if memory_index > 0 else memory_index
 
                 elif character == "]":
                     if memory[memory_index] > 0:
@@ -75,7 +70,7 @@ def main():
                             content_index       = content_index - 1
                             previous_character  = content[content_index]
 
-                content_index = content_index + 1
+                content_index += 1
 
     except FileNotFoundError:
         print(f"File not found: {file_to_interpret}")
