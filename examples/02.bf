@@ -22,7 +22,7 @@
 
   <         We go back to the first cell
 
-  -         We decrement the second cell by one
+  -         We decrement the first cell by one
 
 ]           We loop until the first cell equals zero
 
