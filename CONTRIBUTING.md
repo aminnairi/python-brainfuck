@@ -4,7 +4,9 @@
 
 - UNIX-like operating system
 - Git
-- Python
+- Docker
+- Docker Compose
+- GNU/Make
 
 ## Installation
 
@@ -25,13 +27,11 @@ $ cd python-brainfuck
 ## Unit tests
 
 ```console
-$ python main_test.py
+$ make unit_tests
 ```
 
 ## Integration tests
 
 ```console
-$ python examples/EXAMPLE.bf
+$ make integration_tests
 ```
-
-*Where `EXAMPLE.bf` is the name of the example to run.*
