@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  python:
+    image: python:latest
+    working_dir: /usr/src/app
+    entrypoint: python
+    command: --help
+    tty: true
+    stdin_open: true
+    volumes:
+      - .:/usr/src/app
