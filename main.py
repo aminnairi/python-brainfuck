@@ -22,8 +22,7 @@ def main():
         file_to_interpret = sys.argv[1]
 
         with open(file_to_interpret, "r") as file:
-            file_content    = file.read()
-            content         = clean(file_content)
+            content         = clean(file.read())
             content_length  = len(content)
             memory          = collections.defaultdict(int)
             memory_index    = 0
