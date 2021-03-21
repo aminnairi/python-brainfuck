@@ -20,17 +20,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Copy
-        run: sudo cp main.py /usr/local/bin/brainfuck
-
-      - name: Rights
-        run: sudo chmod +x /usr/local/bin/brainfuck
-
-      - name: "Example #1"
-        run: brainfuck examples/01.bf | grep "a"
-
-      - name: "Example #2"
-        run: brainfuck examples/02.bf | grep "}"
-
-      - name: "Example #3"
-        run: brainfuck examples/03.bf | grep "Hello World!"
+      - name: Tests
+        run: make integration_tests
