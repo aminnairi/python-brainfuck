@@ -92,7 +92,7 @@ Unknown error with its message
 
 ## Issues
 
-See [issues](./issues).
+See [issues](../issues).
 
 ## Changelog
 
